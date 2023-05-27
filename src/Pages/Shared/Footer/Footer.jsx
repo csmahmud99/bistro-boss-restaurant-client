@@ -1,5 +1,3 @@
-import moment from 'moment';
-
 const Footer = () => {
     return (
         <footer>
