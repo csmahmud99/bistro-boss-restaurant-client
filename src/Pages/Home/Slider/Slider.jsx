@@ -12,7 +12,7 @@ import sliderImage06 from "../../../assets/home/slider/06.png";
 const Slider = () => {
     return (
         <div>
-            <Carousel interval="4000" autoPlay="true">
+            <Carousel interval="3000" autoPlay="true" infiniteLoop="true" stopOnHover="false">
                 <div>
                     <img src={sliderImage01} />
                 </div>
