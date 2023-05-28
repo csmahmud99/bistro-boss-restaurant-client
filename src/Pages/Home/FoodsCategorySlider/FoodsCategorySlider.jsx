@@ -18,12 +18,12 @@ import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 const FoodsCategorySlider = () => {
     return (
         <div>
-            <SectionTitle 
+            <SectionTitle
                 subHeading={"From 11:00am to 10:00pm"}
                 heading={"Order Online"} />
             <section>
                 <Swiper
-                    slidesPerView={3}
+                    slidesPerView={4}
                     spaceBetween={40}
                     pagination={{
                         clickable: true,
@@ -44,16 +44,25 @@ const FoodsCategorySlider = () => {
                             Pizzas
                         </p>
                     </SwiperSlide>
+
                     <SwiperSlide>
                         <img src={sliderImage03} alt="food-category-image" />
                         <p className="text-3xl uppercase text-center mr-8 -mt-20 text-white">
                             Soups
                         </p>
                     </SwiperSlide>
+
                     <SwiperSlide>
                         <img src={sliderImage04} alt="food-category-image" />
                         <p className="text-3xl uppercase text-center mr-8 -mt-20 text-white">
                             Deserts
+                        </p>
+                    </SwiperSlide>
+
+                    <SwiperSlide>
+                        <img src={sliderImage01} alt="food-category-image" />
+                        <p className="text-3xl uppercase text-center mr-8 -mt-20 text-white">
+                            Salads
                         </p>
                     </SwiperSlide>
                 </Swiper>
