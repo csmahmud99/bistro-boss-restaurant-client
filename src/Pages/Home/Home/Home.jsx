@@ -1,5 +1,6 @@
 import FoodsCategorySlider from "../FoodsCategorySlider/FoodsCategorySlider";
 import HomeBgImageSection from "../HomeBgImageSection/HomeBgImageSection";
+import PopularMenu from "../PopularMenu/PopularMenu";
 import Slider from "../Slider/Slider";
 
 const Home = () => {
@@ -12,6 +13,10 @@ const Home = () => {
             <div className="max-w-5xl mx-auto my-20">
                 <HomeBgImageSection />
             </div>
+            <div className="max-w-5xl mx-auto my-20">
+                <PopularMenu />
+            </div>
+
         </div>
     );
 };
