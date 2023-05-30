@@ -5,6 +5,11 @@ import './index.css';
 import { RouterProvider } from "react-router-dom";
 import router from './routes/BasicRoutes/BasicRoutes.jsx';
 
+// Dynamic Website Title by React-Helmet
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router} />
+  <HelmetProvider>
+    <RouterProvider router={router} />
+  </HelmetProvider>
 );
