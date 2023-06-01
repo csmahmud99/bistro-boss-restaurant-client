@@ -1,5 +1,3 @@
-import { Parallax } from 'react-parallax';
-
 const PageCover = ({ image, coverTitle, coverSubTitle }) => {
     return (
         <div>
