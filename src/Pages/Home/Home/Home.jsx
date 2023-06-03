@@ -13,19 +13,19 @@ const Home = () => {
                 <title>Home | Bistro Boss Restaurant</title>
             </Helmet>
             <Slider />
-            <div className="max-w-5xl mx-auto">
+            <div className="max-w-6xl mx-auto">
                 <FoodsCategorySlider />
             </div>
-            <div className="max-w-5xl mx-auto my-20">
+            <div className="max-w-6xl mx-auto my-20">
                 <HomeBgImageSection />
             </div>
-            <div className="max-w-5xl mx-auto my-20">
+            <div className="max-w-6xl mx-auto my-20">
                 <PopularMenu />
             </div>
             <div>
                 <Featured />
             </div>
-            <div className="max-w-5xl mx-auto my-20">
+            <div className="max-w-6xl mx-auto my-20">
                 <Testimonials />
             </div>
         </div>

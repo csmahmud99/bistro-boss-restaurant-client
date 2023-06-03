@@ -35,7 +35,7 @@ const OurMenu = () => {
 
 
             {/* Today's Offer Section Items */}
-            <section className="max-w-5xl mx-auto my-20">
+            <section className="max-w-6xl mx-auto my-20">
                 <div>
                     <SectionTitle
                         subHeading="Don't Miss"
@@ -43,10 +43,6 @@ const OurMenu = () => {
                     />
 
                     <MenuCategory items={offer} />
-
-                    <div className="text-center mt-10">
-                        <button className="btn btn-outline text-black border-0 border-b-4">Order Your Favorite Food</button>
-                    </div>
                 </div>
             </section>
 
@@ -59,12 +55,8 @@ const OurMenu = () => {
                     coverSubTitle="Would you like to try our Desserts?"
                 />
 
-                <div className="max-w-5xl mx-auto my-20">
-                    <MenuCategory items={desserts} />
-
-                    <div className="text-center mt-10">
-                        <button className="btn btn-outline text-black border-0 border-b-4">Order Your Favorite Food</button>
-                    </div>
+                <div className="max-w-6xl mx-auto my-20">
+                    <MenuCategory items={desserts} title={"desserts"} />
                 </div>
             </section>
 
@@ -77,12 +69,8 @@ const OurMenu = () => {
                     coverSubTitle="Would you like to try our Pizzas?"
                 />
 
-                <div className="max-w-5xl mx-auto my-20">
-                    <MenuCategory items={pizzas} />
-
-                    <div className="text-center mt-10">
-                        <button className="btn btn-outline text-black border-0 border-b-4">Order Your Favorite Food</button>
-                    </div>
+                <div className="max-w-6xl mx-auto my-20">
+                    <MenuCategory items={pizzas} title={"pizzas"} />
                 </div>
             </section>
 
@@ -95,12 +83,8 @@ const OurMenu = () => {
                     coverSubTitle="Would you like to try our Salads?"
                 />
 
-                <div className="max-w-5xl mx-auto my-20">
-                    <MenuCategory items={salads} />
-
-                    <div className="text-center mt-10">
-                        <button className="btn btn-outline text-black border-0 border-b-4">Order Your Favorite Food</button>
-                    </div>
+                <div className="max-w-6xl mx-auto my-20">
+                    <MenuCategory items={salads} title={"salads"} />
                 </div>
             </section>
 
@@ -113,12 +97,8 @@ const OurMenu = () => {
                     coverSubTitle="Would you like to try our Soups?"
                 />
 
-                <div className="max-w-5xl mx-auto my-20">
-                    <MenuCategory items={soups} />
-
-                    <div className="text-center mt-10">
-                        <button className="btn btn-outline text-black border-0 border-b-4">Order Your Favorite Food</button>
-                    </div>
+                <div className="max-w-6xl mx-auto my-20">
+                    <MenuCategory items={soups} title={"soups"} />
                 </div>
             </section>
 
