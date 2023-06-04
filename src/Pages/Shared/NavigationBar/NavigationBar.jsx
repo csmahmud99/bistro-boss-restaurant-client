@@ -20,6 +20,9 @@ const NavigationBar = () => {
         {
             user
                 ? <>
+                    <span className="bg-white text-black font-bold mt-2 pt-2 px-3 rounded-md">
+                        {user?.displayName}
+                    </span>
                     <button onClick={handleLogOut} className="btn btn-active btn-ghost">Log Out</button>
                 </>
                 : <>
