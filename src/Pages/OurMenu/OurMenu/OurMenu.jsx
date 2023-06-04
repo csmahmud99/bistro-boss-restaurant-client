@@ -42,7 +42,7 @@ const OurMenu = () => {
                         heading="Today's Offer"
                     />
 
-                    <MenuCategory items={offer} />
+                    <MenuCategory items={offer} title={"salads"} />
                 </div>
             </section>
 
