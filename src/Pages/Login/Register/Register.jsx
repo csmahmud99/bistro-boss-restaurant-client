@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../providers/AuthProvider";
+import { Link } from "react-router-dom";
 
 const Register = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -14,6 +15,15 @@ const Register = () => {
         .then(userCredential =>{
             const user = userCredential.user;
             console.log(user);
+            Swal.fire({
+                title: "Your account has been created successfully",
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                }
+            });
         })
         .catch(error => {
             console.log(error.message);
@@ -31,7 +41,7 @@ const Register = () => {
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold">Login now!</h1>
+                        <h1 className="text-5xl font-bold">Register now!</h1>
                         <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -77,6 +87,9 @@ const Register = () => {
                                 <input type="submit" value="Register" className="btn btn-primary" />
                             </div>
                         </form>
+                        <p className="text-center py-5">
+                            <small>Already have an account? Please, <Link to="/login">Log In</Link></small>
+                        </p>
                     </div>
                 </div>
             </div>
