@@ -2,9 +2,10 @@ import { Helmet } from "react-helmet-async";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 import useCart from "../../../hooks/useCart";
 import { FaTrashAlt } from 'react-icons/fa';
+import Swal from "sweetalert2";
 
 const MyCart = () => {
-    const [cart] = useCart();
+    const [cart, refetch] = useCart();
     console.log(cart);
     /* 
         var arr = [{x:1}, {x:2}, {x:4}];
@@ -14,6 +15,36 @@ const MyCart = () => {
 
     // Ref: https://stackoverflow.com/questions/5732043/how-to-call-reduce-on-an-array-of-objects-to-sum-their-properties
     const total = cart.reduce((sum, item) => sum + item.price, 0);
+
+    const handleDelete = item => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/carts/${item._id}`, {
+                    method: "DELETE"
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            refetch();
+                            Swal.fire(
+                                'Deleted!',
+                                'The item has been deleted.',
+                                'success'
+                            );
+                        }
+                    });
+            }
+        });
+    };
+
     return (
         <div>
             <Helmet>
@@ -71,7 +102,7 @@ const MyCart = () => {
                                         <td className="text-right">${item.price}</td>
 
                                         <td>
-                                            <button className="btn btn-warning bg-[#B91C1C] text-white btn-sm"><FaTrashAlt /></button>
+                                            <button onClick={() => handleDelete(item)} className="btn btn-warning bg-[#B91C1C] text-white btn-sm"><FaTrashAlt /></button>
                                         </td>
                                     </tr>)
                                 }
