@@ -4,11 +4,14 @@ import { FaHome, FaCalendarAlt, FaWallet, FaShoppingCart, FaCommentDots, FaCalen
 const Dashboard = () => {
     return (
         <div>
-            <div className="drawer drawer-mobile">
+            <div className="drawer drawer-mobile bg-[#F6F6F6]">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content flex flex-col items-center justify-center">
-                    {/* Page content here */}
-                    <Outlet />
+                <div className="drawer-content">
+                    <div className="max-w-3xl mx-auto">
+                        {/* Page content here */}
+                        <Outlet />
+                    </div>
+
                     <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
                 </div>
 
@@ -28,7 +31,7 @@ const Dashboard = () => {
 
                         <li><NavLink to="/dashboard/my-booking"><FaCalendarCheck /> My Booking</NavLink></li>
 
-                        <div className="divider"></div> 
+                        <div className="divider"></div>
 
                         <li><NavLink to="/"><FaHome />Home</NavLink></li>
                         <li><NavLink to="/our-menu"><FaClipboardList /> Our Menu</NavLink></li>
