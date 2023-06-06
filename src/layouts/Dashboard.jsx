@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import { FaHome, FaCalendarAlt, FaWallet, FaShoppingCart, FaCommentDots, FaCalendarCheck, FaClipboardList, FaShoppingBag } from 'react-icons/fa';
 
 const Dashboard = () => {
@@ -14,18 +14,25 @@ const Dashboard = () => {
 
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
+                    <ul className="menu p-4 w-80 h-full bg-[#D1A054]">
                         {/* Sidebar content here */}
-                        <li><Link><FaHome /> User Home</Link></li>
-                        <li><Link><FaCalendarAlt /> Reservation</Link></li>
-                        <li><Link><FaWallet /> Payment History</Link></li>
-                        <li><Link><FaShoppingCart /> My Cart</Link></li>
-                        <li><Link><FaCommentDots /> Add Review</Link></li>
-                        <li><Link><FaCalendarCheck /> My Booking</Link></li>
+                        <li><NavLink to="/dashboard/home"><FaHome /> User Home</NavLink></li>
+
+                        <li><NavLink to="/dashboard/reservation"><FaCalendarAlt /> Reservation</NavLink></li>
+
+                        <li><NavLink to="/dashboard/payment-history"><FaWallet /> Payment History</NavLink></li>
+
+                        <li><NavLink to="/dashboard/my-cart"><FaShoppingCart /> My Cart</NavLink></li>
+
+                        <li><NavLink to="/dashboard/add-review"><FaCommentDots /> Add Review</NavLink></li>
+
+                        <li><NavLink to="/dashboard/my-booking"><FaCalendarCheck /> My Booking</NavLink></li>
+
                         <div className="divider"></div> 
-                        <li><Link to="/"><FaHome />Home</Link></li>
-                        <li><Link to="/our-menu"><FaClipboardList /> Our Menu</Link></li>
-                        <li><Link to="/order/salads"><FaShoppingBag /> Order Food</Link></li>
+
+                        <li><NavLink to="/"><FaHome />Home</NavLink></li>
+                        <li><NavLink to="/our-menu"><FaClipboardList /> Our Menu</NavLink></li>
+                        <li><NavLink to="/order/salads"><FaShoppingBag /> Order Food</NavLink></li>
                     </ul>
                 </div>
             </div>
