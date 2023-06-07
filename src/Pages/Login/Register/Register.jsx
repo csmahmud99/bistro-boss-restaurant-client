@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Register = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -62,7 +63,7 @@ const Register = () => {
             <Helmet>
                 <title>Register | Bistro Boss Restaurant</title>
             </Helmet>
-            <div className="hero min-h-screen bg-base-200">
+            <div className="hero min-h-screen bg-base-200 pt-28 pb-20">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold">Register now!</h1>
@@ -128,6 +129,9 @@ const Register = () => {
                         <p className="text-center py-4">
                             <small>Already have an account? Please, <Link to="/login">Log In</Link></small>
                         </p>
+
+                        <p className="text-center font-bold text-orange-500">Or, Sign Up with</p>
+                        <SocialLogin />
                     </div>
                 </div>
             </div>
