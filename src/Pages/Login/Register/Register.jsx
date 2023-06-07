@@ -13,33 +13,46 @@ const Register = () => {
     const navigate = useNavigate();
 
     const onSubmit = data => {
-        console.log(data);
+        // console.log(data);
         createUser(data.email, data.password)
             .then(userCredential => {
                 const user = userCredential.user;
                 console.log(user);
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        console.log("User profile info. is updated");
+                        const saveUser = { name: data.name, email: data.email };
+                        fetch("http://localhost:5000/users", {
+                            method: "POST",
+                            headers: {
+                                "content-type": "application/json"
+                            },
+                            body: JSON.stringify(saveUser)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+                                    reset();
+                                    Swal.fire({
+                                        title: "Your account has been created successfully",
+                                        showClass: {
+                                            popup: 'animate__animated animate__fadeInDown'
+                                        },
+                                        hideClass: {
+                                            popup: 'animate__animated animate__fadeOutUp'
+                                        }
+                                    });
+                                    navigate("/");
+                                }
+                            });
+                        // console.log("User profile info. is updated");
                     })
                     .catch(error => {
                         console.log(error.message);
                     });
-                Swal.fire({
-                    title: "Your account has been created successfully",
-                    showClass: {
-                        popup: 'animate__animated animate__fadeInDown'
-                    },
-                    hideClass: {
-                        popup: 'animate__animated animate__fadeOutUp'
-                    }
-                });
-                navigate("/");
             })
             .catch(error => {
                 console.log(error.message);
             });
-        reset();
     };
 
 
